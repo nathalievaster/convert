@@ -1,1 +1,30 @@
-<p>convert works!</p>
+<h2>Konvertera värden</h2>
+
+<div class="converter">
+  <label>
+    Meter:
+    <input [(ngModel)]="meters" (input)="convertToFeet()" type="number">
+  </label>
+  <p>Feet: {{ feet }}</p>
+
+  <label>
+    Feet:
+    <input [(ngModel)]="feet" (input)="convertToMeters()" type="number">
+  </label>
+  <p>Meter: {{ meters }}</p>
+
+  <hr>
+
+  <label>
+    Celsius:
+    <input [(ngModel)]="celsius" (input)="convertToFahrenheit()" type="number">
+  </label>
+  <p>Fahrenheit: {{ fahrenheit }}</p>
+
+  <label>
+    Fahrenheit:
+    <input [(ngModel)]="fahrenheit" (input)="convertToCelsius()" type="number">
+  </label>
+  <p>Celsius: {{ celsius }}</p>
+</div>
+

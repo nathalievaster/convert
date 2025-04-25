@@ -1,0 +1,59 @@
+h2 {
+    text-align: center;
+}
+.converter {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .converter h2 {
+    text-align: center;
+    color: #3b82f6;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="number"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+  }
+  
+  p {
+    margin: 0.2rem 0 1.2rem;
+    font-weight: bold;
+    color: #2563eb;
+    font-size: 1.1rem;
+    text-align: right;
+  }
+  
+  @media (max-width: 600px) {
+    .converter {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    p {
+      text-align: left;
+    }
+  }
+  
