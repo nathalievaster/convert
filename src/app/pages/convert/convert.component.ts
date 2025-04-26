@@ -1,32 +1,54 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-convert',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './convert.component.html',
   styleUrl: './convert.component.css'
 })
 export class ConvertComponent {
-  meters: number = 0;
-  feet: number = 0;
-  celsius: number = 0;
-  fahrenheit: number = 0;
+  // Meter/Feet
+  lengthInput: number = 0;
+  lengthOutput: number = 0;
+  isMeterToFeet: boolean = true;
 
-  convertToFeet() {
-    this.feet = this.meters * 3.28084;
+  // Celsius/Fahrenheit
+  tempInput: number = 0;
+  tempOutput: number = 0;
+  isCelsiusToFahrenheit: boolean = true;
+
+  // Switch between meter <-> feet
+  switchLengthConversion() {
+    this.isMeterToFeet = !this.isMeterToFeet;
+    this.lengthInput = 0;
+    this.lengthOutput = 0;
   }
 
-  convertToMeters() {
-    this.meters = this.feet / 3.28084;
+  // Switch between celsius <-> fahrenheit
+  switchTempConversion() {
+    this.isCelsiusToFahrenheit = !this.isCelsiusToFahrenheit;
+    this.tempInput = 0;
+    this.tempOutput = 0;
   }
 
-  convertToFahrenheit() {
-    this.fahrenheit = (this.celsius * 9 / 5) + 32;
+  // Convert length
+  convertLength() {
+    if (this.isMeterToFeet) {
+      this.lengthOutput = this.lengthInput * 3.28084;
+    } else {
+      this.lengthOutput = this.lengthInput / 3.28084;
+    }
   }
 
-  convertToCelsius() {
-    this.celsius = (this.fahrenheit - 32) * 5 / 9;
+  // Convert temperature
+  convertTemp() {
+    if (this.isCelsiusToFahrenheit) {
+      this.tempOutput = (this.tempInput * 9/5) + 32;
+    } else {
+      this.tempOutput = (this.tempInput - 32) * 5/9;
+    }
   }
 }

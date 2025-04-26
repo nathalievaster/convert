@@ -1,30 +1,43 @@
 <h1>Konvertera värden</h1>
 
-<div class="converter">
-  <label>
-    Meter:
-    <input [(ngModel)]="meters" (input)="convertToFeet()" type="number">
-  </label>
-  <p>Feet: {{ feet }}</p>
 
-  <label>
-    Feet:
-    <input [(ngModel)]="feet" (input)="convertToMeters()" type="number">
-  </label>
-  <p>Meter: {{ meters }}</p>
 
-  <hr>
+<section>
+    <h2>Konvertera Längd</h2>
+  <button (click)="switchLengthConversion()">
+    Växla till {{ isMeterToFeet ? 'Feet → Meter' : 'Meter → Feet' }}
+  </button>
 
-  <label>
-    Celsius:
-    <input [(ngModel)]="celsius" (input)="convertToFahrenheit()" type="number">
-  </label>
-  <p>Fahrenheit: {{ fahrenheit }}</p>
+  <div class="input-group">
+    <label>
+      {{ isMeterToFeet ? 'Meter:' : 'Feet:' }}
+      <input [(ngModel)]="lengthInput" (input)="convertLength()" type="number" />
+    </label>
+  </div>
 
-  <label>
-    Fahrenheit:
-    <input [(ngModel)]="fahrenheit" (input)="convertToCelsius()" type="number">
-  </label>
-  <p>Celsius: {{ celsius }}</p>
-</div>
+  <p>
+    Resultat: {{ lengthOutput | number:'1.2-2' }} {{ isMeterToFeet ? 'Feet' : 'Meter' }}
+  </p>
+</section>
 
+<hr>
+
+
+
+<section>
+    <h2>Konvertera Temperatur</h2>
+  <button (click)="switchTempConversion()">
+    Växla till {{ isCelsiusToFahrenheit ? 'Fahrenheit → Celsius' : 'Celsius → Fahrenheit' }}
+  </button>
+
+  <div class="input-group">
+    <label>
+      {{ isCelsiusToFahrenheit ? 'Celsius:' : 'Fahrenheit:' }}
+      <input [(ngModel)]="tempInput" (input)="convertTemp()" type="number" />
+    </label>
+  </div>
+
+  <p>
+    Resultat: {{ tempOutput | number:'1.1-1' }}° {{ isCelsiusToFahrenheit ? 'Fahrenheit' : 'Celsius' }}
+  </p>
+</section>
