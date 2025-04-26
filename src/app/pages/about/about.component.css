@@ -1,5 +1,45 @@
 section {
-    max-width: 550px;
-    line-height: 1.8em;
-    margin: 0 auto;
-}
+    background-image: url('/sunset.JPEG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4rem 2rem;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  section > h1 {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  
+  article {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  
+  article h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #ffd700; /* Guldig färg för rubrikerna */
+  }
+  
+  article p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
